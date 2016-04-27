@@ -7,6 +7,7 @@ import json
 from flask import request, current_app
 from flask.views import MethodView
 
+
 """RESTful service discovery API for gGRC services."""
 
 class ServiceDescription(MethodView):
