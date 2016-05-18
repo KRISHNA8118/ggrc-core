@@ -142,8 +142,6 @@ class TestBasicCsvImport(converters.TestCase):
     self.assertEqual(len(ca.owners), 1)
     self.assertEqual(ca.owners[0].email, "danny@reciprocitylabs.com")
     self.assertEqual(ca.contact.email, "danny@reciprocitylabs.com")
-    self.assertEqual(ca.design, "Effective")
-    self.assertEqual(ca.operationally, "Effective")
     self.assertIsNone(models.Relationship.find_related(ca, au))
 
     filename = "pci_program_update.csv"
@@ -157,8 +155,6 @@ class TestBasicCsvImport(converters.TestCase):
     au = models.Audit.query.filter_by(slug="AUDIT-Consolidated").first()
     self.assertEqual(ca.owners[0].email, "miha@reciprocitylabs.com")
     self.assertEqual(ca.contact.email, "albert@reciprocitylabs.com")
-    self.assertEqual(ca.design, "Needs improvement")
-    self.assertEqual(ca.operationally, "Ineffective")
     self.assertIsNotNone(models.Relationship.find_related(ca, au))
 
   def test_person_imports(self):

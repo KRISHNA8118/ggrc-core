@@ -59,23 +59,11 @@ class Assessment(mixins_statusable.Statusable,
       }
   }
 
-  design = deferred(db.Column(db.String), "Assessment")
-  operationally = deferred(db.Column(db.String), "Assessment")
-
   object = {}  # we add this for the sake of client side error checking
   audit = {}
 
-  VALID_CONCLUSIONS = frozenset([
-      "Effective",
-      "Ineffective",
-      "Needs improvement",
-      "Not Applicable"
-  ])
-
   # REST properties
   _publish_attrs = [
-      'design',
-      'operationally',
       PublishOnly('audit'),
       PublishOnly('object')
   ]
@@ -83,9 +71,7 @@ class Assessment(mixins_statusable.Statusable,
   _tracked_attrs = {
       'contact_id',
       'description',
-      'design',
       'notes',
-      'operationally',
       'reference_url',
       'secondary_contact_id',
       'test_plan',
@@ -101,8 +87,6 @@ class Assessment(mixins_statusable.Statusable,
           "mandatory": True,
       },
       "url": "Assessment URL",
-      "design": "Conclusion: Design",
-      "operationally": "Conclusion: Operation",
       "related_creators": {
           "display_name": "Creator",
           "mandatory": True,
@@ -121,19 +105,6 @@ class Assessment(mixins_statusable.Statusable,
           "type": reflection.AttributeInfo.Type.MAPPING,
       },
   }
-
-  def validate_conclusion(self, value):
-    return value if value in self.VALID_CONCLUSIONS else ""
-
-  @validates("operationally")
-  def validate_opperationally(self, key, value):
-    # pylint: disable=unused-argument
-    return self.validate_conclusion(value)
-
-  @validates("design")
-  def validate_design(self, key, value):
-    # pylint: disable=unused-argument
-    return self.validate_conclusion(value)
 
   @classmethod
   def _filter_by_related_creators(cls, predicate):

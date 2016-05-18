@@ -42,8 +42,6 @@ class TestAssessmentMixins(test_mixins_base.TestMixinsBase):
 
     self.attributes_introduced = [
         ('audit', dict),
-        ('design', attributes.InstrumentedAttribute),
-        ('operationally', attributes.InstrumentedAttribute),
         ('object', dict),
         ('status', attributes.InstrumentedAttribute),                    # Stateful       # noqa
         ('assignees', property),                                         # Assignable     # noqa

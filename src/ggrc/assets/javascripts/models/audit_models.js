@@ -754,10 +754,9 @@
     defaults: {
       status: 'Not Started'
     },
-    filter_keys: ['title', 'state', 'operationally', 'operational', 'design',
+    filter_keys: ['title', 'state', 'operational',
                   'finished_date', 'verified_date', 'verified'],
     filter_mappings: {
-      operational: 'operationally',
       'verified date': 'verified_date',
       'finished date': 'finished_date'
     },
@@ -787,12 +786,6 @@
       }, {
         attr_title: 'Last Updated',
         attr_name: 'updated_at'
-      }, {
-        attr_title: 'Conclusion: Design',
-        attr_name: 'design'
-      }, {
-        attr_title: 'Conclusion: Operation',
-        attr_name: 'operationally'
       }, {
         attr_title: 'Finished Date',
         attr_name: 'finished_date'

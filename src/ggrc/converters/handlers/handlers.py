@@ -427,16 +427,6 @@ class MappingColumnHandler(ColumnHandler):
     pass
 
 
-class ConclusionColumnHandler(ColumnHandler):
-
-  """ Handler for design and operationally columns in ControlAssesments """
-
-  def parse_item(self):
-    conclusion_map = {i.lower(): i for i in
-                      Assessment.VALID_CONCLUSIONS}
-    return conclusion_map.get(self.raw_value.lower(), "")
-
-
 class OptionColumnHandler(ColumnHandler):
 
   def parse_item(self):

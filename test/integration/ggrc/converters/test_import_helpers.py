@@ -332,8 +332,6 @@ class TestGetObjectColumnDefinitions(TestCase):
         "Verified Date",
         "Finished Date",
         "State",
-        "Conclusion: Design",
-        "Conclusion: Operation",
         "Recipients",
         "Send by default",
         "Delete",
