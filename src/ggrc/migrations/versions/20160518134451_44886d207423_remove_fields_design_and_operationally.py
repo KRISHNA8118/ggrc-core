@@ -23,6 +23,7 @@ _table_name = "assessments"
 _column_name1 = "design"
 _column_name2 = "operationally"
 
+
 def upgrade():
   """
   Remove design and operationally columns from assessments
@@ -37,12 +38,10 @@ def downgrade():
   Remove design and operationally columns from assessments
   """
   op.add_column(
-    _table_name,
-    sa.Column(_column_name1, sa.String(length=250), nullable=True)
+      _table_name,
+      sa.Column(_column_name1, sa.String(length=250), nullable=True)
   )
-
   op.add_column(
-    _table_name,
-    sa.Column(_column_name2, sa.String(length=250), nullable=True)
+      _table_name,
+      sa.Column(_column_name2, sa.String(length=250), nullable=True)
   )
-
