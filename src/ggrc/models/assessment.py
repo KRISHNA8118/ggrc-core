@@ -5,8 +5,6 @@
 
 """Module for Assessment object"""
 
-from sqlalchemy.orm import validates
-
 from ggrc import db
 from ggrc.models import mixins_reminderable
 from ggrc.models import mixins_statusable
@@ -19,7 +17,6 @@ from ggrc.models.mixins import FinishedDate
 from ggrc.models.mixins import TestPlanned
 from ggrc.models.mixins import Timeboxed
 from ggrc.models.mixins import VerifiedDate
-from ggrc.models.mixins import deferred
 from ggrc.models.mixins_assignable import Assignable
 from ggrc.models.object_document import Documentable
 from ggrc.models.object_owner import Ownable

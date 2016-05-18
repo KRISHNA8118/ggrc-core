@@ -21,7 +21,6 @@ from ggrc.login import get_current_user
 from ggrc.models import Audit
 from ggrc.models import CategoryBase
 from ggrc.models import Contract
-from ggrc.models import Assessment
 from ggrc.models import ObjectPerson
 from ggrc.models import Option
 from ggrc.models import Person

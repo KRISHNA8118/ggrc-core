@@ -14,7 +14,6 @@ Create Date: 2016-05-18 13:44:51.370427
 import sqlalchemy as sa
 
 from alembic import op
-from sqlalchemy.dialects import mysql
 
 # revision identifiers, used by Alembic.
 revision = '44886d207423'
@@ -23,8 +22,6 @@ down_revision = '44ebc240800b'
 _table_name = "assessments"
 _column_name1 = "design"
 _column_name2 = "operationally"
-
-
 
 def upgrade():
   """
@@ -48,4 +45,4 @@ def downgrade():
     _table_name,
     sa.Column(_column_name2, sa.String(length=250), nullable=True)
   )
-### end Alembic commands ###
+
